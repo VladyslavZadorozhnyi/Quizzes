@@ -1,0 +1,12 @@
+<div class="quiz" *ngFor="let quiz of quizzes | keyvalue">
+  <h3 class="quiz__name">{{ quiz.key }}</h3>
+<!--    <li class="questions__item" *ngFor="let question of quiz.value">-->
+<!--      <p *ngFor="let answer of question.incorrect_answers" [innerHTML]="answer">-->
+
+<!--      </p>-->
+<!--    </li>-->
+  <p class="quiz__questions-count">
+   Questions : {{ quiz.value.length }}
+  </p>
+  <button class="quiz__start" (click)="startQuiz(quiz.key)">Play</button>
+</div>
