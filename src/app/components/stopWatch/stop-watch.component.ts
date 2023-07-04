@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subject, takeUntil } from 'rxjs';
+import { Time } from './stop-watch.model';
 
 @Component({
   selector: 'app-stop-watch',
@@ -9,21 +10,25 @@ import { interval, Subject, takeUntil } from 'rxjs';
 export class StopWatchComponent implements OnInit, OnDestroy {
   minutes: number = 0;
   seconds: number = 0;
-  isTimerRunning: boolean = false;
 
   private unsubscribe$: Subject<void> = new Subject<void>();
 
-  ngOnInit() {
+  get time(): Time {
+    return {
+      minutes: this.minutes,
+      seconds: this.seconds,
+    };
+  }
+
+  ngOnInit(): void {
     this.startTimer();
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.stopTimer();
   }
 
-  startTimer() {
-    this.isTimerRunning = true;
-
+  startTimer(): void {
     interval(1000)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(() => {
@@ -36,10 +41,7 @@ export class StopWatchComponent implements OnInit, OnDestroy {
       });
   }
 
-  stopTimer() {
-    const time = { minutes: this.minutes, seconds: this.seconds };
-    localStorage.setItem('savedTime', JSON.stringify(time));
-    this.isTimerRunning = false;
+  stopTimer(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
   }

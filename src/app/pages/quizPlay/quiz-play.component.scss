@@ -1,0 +1,21 @@
+.quiz {
+  padding: .5rem;
+
+  &-header {
+    @extend %space-between
+  }
+
+  &-actions {
+    @extend %space-between
+  }
+
+  &-question {
+    margin-bottom: .5rem;
+  }
+}
+
+%space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

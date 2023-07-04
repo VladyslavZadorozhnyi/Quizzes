@@ -1,11 +1,11 @@
 import { QuestionAPI } from './questionsAPI.model';
-import { Utils } from '../../util/utils';
+import { ObjectUtil } from '../../util/object.util';
 
 export class QuestionsConverter {
   public static groupQuestionsByCategories(
     questions: QuestionAPI[]
   ): Map<string, QuestionAPI[]> {
-    let groupedQuestions: Map<string, QuestionAPI[]> = Utils.groupByKey(
+    let groupedQuestions: Map<string, QuestionAPI[]> = ObjectUtil.groupByKey(
       questions,
       'category'
     );

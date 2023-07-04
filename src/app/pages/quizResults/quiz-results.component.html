@@ -1,2 +1,17 @@
-<p>quizz-results works!</p>
-<h2>Test Time: {{ minutes }}:{{ seconds | number: '2.0' }}</h2>
+<mat-card>
+  <mat-card-header>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container *ngIf="quizResult">
+      <p>Points: {{quizResult.points}}</p>
+      <p>Quiz time: {{quizResult.totalTime.minutes}}:{{ quizResult.totalTime.seconds | number: '2.0' }}</p>
+      <p>Correct answers: {{quizResult.correctAnswersCount}} / {{quizResult.countQuestion}}</p>
+      <p *ngFor ="let quiz of quizResult.questionsComplexity ">Complexity level: {{quiz.complexity}}. Count: {{quiz.questionsCount}}</p>
+    </ng-container>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button routerLink="/stats">Show stats</button>
+    <button mat-raised-button routerLink="/home">Select another quiz</button>
+  </mat-card-actions>
+</mat-card>
+

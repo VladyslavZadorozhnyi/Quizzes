@@ -1,4 +1,4 @@
-export class Utils {
+export class ObjectUtil {
   public static groupByKey<T, K extends keyof T>(
     array: T[],
     key: K

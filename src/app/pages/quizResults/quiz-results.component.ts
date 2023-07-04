@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { QuizResult } from '../../services/stats/stats.model';
+import { QuizStatsService } from '../../services/stats/quiz-stats.service';
 
 @Component({
   selector: 'app-quiz-results',
@@ -6,15 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quiz-results.component.scss'],
 })
 export class QuizResultsComponent implements OnInit {
-  minutes!: number;
-  seconds!: number;
+  quizResult!: QuizResult;
+
+  constructor(private quizStats: QuizStatsService) {}
 
   ngOnInit() {
-    const savedTime = localStorage.getItem('savedTime');
-    if (savedTime) {
-      const time = JSON.parse(savedTime);
-      this.minutes = time.minutes;
-      this.seconds = time.seconds;
-    }
+    this.quizResult = this.quizStats.quizResult;
   }
 }

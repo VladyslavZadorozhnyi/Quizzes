@@ -10,10 +10,6 @@ export class QuizService {
 
   constructor() {}
 
-  get quizId(): string {
-    return this._quizId;
-  }
-
   set quizId(id: string) {
     this._quizId = id;
   }
@@ -22,8 +18,14 @@ export class QuizService {
     this._quizzes = quizzes;
   }
 
+  get quizzes(): Quiz[] {
+    return this._quizzes;
+  }
+
   getActiveQuiz(): Quiz {
     const quiz = this._quizzes.find((quiz) => quiz.name === this._quizId);
-    return quiz ? quiz : { name: '', questions: [] };
+    return quiz
+      ? quiz
+      : { name: '', questions: [], time: { minutes: 0, seconds: 0 } };
   }
 }

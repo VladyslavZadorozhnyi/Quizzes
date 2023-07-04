@@ -1,1 +1,13 @@
-<p>quizz-stats works!</p>
+<ng-container *ngIf="(quizStats$ | async) as stats">
+  {{ stats | json }}
+  {{ stats.quizzesCount }}
+</ng-container>
+
+<br/>
+<div class="chart-wrapper">
+  <app-quiz-results-chart [chartData]="chartData">
+
+  </app-quiz-results-chart>
+</div>
+<br>
+<button mat-raised-button (click)="reset()">Reset stats</button>

@@ -1,1 +1,11 @@
-<p>quizz-results-chart works!</p>
+<div class="wrapper">
+  <canvas baseChart
+          [type]="'pie'"
+          [datasets]="pieChartDatasets"
+          [labels]="pieChartLabels"
+          [options]="pieChartOptions"
+          [plugins]="pieChartPlugins"
+          [legend]="pieChartLegend">
+  </canvas>
+</div>
+

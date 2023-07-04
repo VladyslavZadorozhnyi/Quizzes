@@ -12,6 +12,12 @@ import { QuizResultsChartComponent } from './pages/quizStats/quizResultsChart/qu
 import { QuizStatsComponent } from './pages/quizStats/quiz-stats.component';
 import { StopWatchComponent } from './components/stopWatch/stop-watch.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,17 @@ import { HttpClientModule } from '@angular/common/http';
     StopWatchComponent,
   ],
 
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatCardModule,
+    MatButtonModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+    MatListModule,
+    NgChartsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,1 +1,7 @@
-<p>quizz-card works!</p>
+<mat-card>
+  <h3 class="quiz__name">{{ quiz.name }}</h3>
+  <p class="quiz__questions-count">
+    Questions : {{ quiz.questions.length }}
+  </p>
+  <button class="quiz__start" (click)="onQuizSelected(quiz.name)">Play</button>
+</mat-card>

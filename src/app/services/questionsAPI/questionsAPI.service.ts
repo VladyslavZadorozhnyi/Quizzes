@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { map, Observable, tap } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { QuestionAPI, QuestionsAPIResponse } from './questionsAPI.model';
-import { Utils } from '../../util/utils';
+import { ObjectUtil } from '../../util/object.util';
 
 @Injectable({
   providedIn: 'root',
