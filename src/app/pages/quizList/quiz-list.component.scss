@@ -1,5 +1,7 @@
-.wrapper {
-  height: 100%;
+.btn {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
 }
 
 .quiz-container {
@@ -7,4 +9,18 @@
   flex-direction: column;
   padding: .5rem;
   gap: .5rem;
+
+  .spinner {
+    margin: 0 auto;
+  }
+
+  .quiz-header {
+    display: flex;
+    justify-content: center;
+  }
+
+  .quiz-list {
+    height: 70%;
+  }
 }
+

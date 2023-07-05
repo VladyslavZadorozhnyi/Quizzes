@@ -29,8 +29,7 @@ export class QuestionsAPIService {
           default:
             return [];
         }
-      }),
-      tap((data) => console.log(data))
+      })
     );
   }
 }

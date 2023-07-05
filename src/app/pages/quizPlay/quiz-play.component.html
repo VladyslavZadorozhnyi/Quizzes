@@ -13,7 +13,7 @@
     </app-quiz-question>
   </div>
   <div class="quiz-actions">
-    <button mat-raised-button (click)="cancelQuiz()">Cancel quiz</button>
-    <button mat-raised-button [disabled]="!currentAnswer" (click)="toNextQuestion()">{{ nextBtnMessage }}</button>
+    <button mat-raised-button color="warn" (click)="cancelQuiz()">Cancel quiz</button>
+    <button mat-raised-button color="accent" [disabled]="!currentAnswer" (click)="toNextQuestion()">{{ nextBtnMessage }}</button>
   </div>
 </div>

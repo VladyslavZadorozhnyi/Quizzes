@@ -19,5 +19,5 @@ export interface QuizStats {
   quizzesCount: number;
   correctQuestionsCount: number;
   wrongQuestionsCount: number;
-  averageTimePerQuestion: number;
+  averageQuizTime: number;
 }

@@ -18,6 +18,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { NgChartsModule } from 'ng2-charts';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,7 @@ import { NgChartsModule } from 'ng2-charts';
     QuizResultsChartComponent,
     QuizStatsComponent,
     StopWatchComponent,
+    ToolbarComponent,
   ],
 
   imports: [
@@ -42,6 +46,8 @@ import { NgChartsModule } from 'ng2-charts';
     ReactiveFormsModule,
     MatListModule,
     NgChartsModule,
+    MatToolbarModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

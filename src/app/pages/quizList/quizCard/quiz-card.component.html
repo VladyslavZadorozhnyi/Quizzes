@@ -1,7 +1,11 @@
-<mat-card>
-  <h3 class="quiz__name">{{ quiz.name }}</h3>
-  <p class="quiz__questions-count">
-    Questions : {{ quiz.questions.length }}
-  </p>
-  <button class="quiz__start" (click)="onQuizSelected(quiz.name)">Play</button>
+<mat-card class="container">
+  <div class="content">
+    <h3 class="quiz__name">{{ quiz.name }}</h3>
+    <p class="quiz__questions-count">
+      Questions : {{ quiz.questions.length }}
+    </p>
+  </div>
+  <div class="play-button" >
+    <button mat-raised-button color="primary" class="quiz__start" (click)="onQuizSelected(quiz.name)">Play</button>
+  </div>
 </mat-card>

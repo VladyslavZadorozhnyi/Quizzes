@@ -1,10 +1,17 @@
-<div class="wrapper">
-  <div class="button">
-    <button mat-raised-button (click)="startRandomQuizName()">I'm lucky</button>
-  </div>
-  <div class="quiz-container">
-    <div class="quiz" *ngFor="let quiz of quizzes">
-      <app-quiz-card [quiz]="quiz" (quizSelected)="onQuizSelected($event)"></app-quiz-card>
+
+<div class="quiz-container">
+  <h2 class="quiz-header">Quizzes list</h2>
+  <ng-container *ngIf="quizzes; else loader">
+    <div class="btn">
+      <button mat-raised-button color="primary" (click)="startRandomQuizName()">I'm lucky</button>
     </div>
-  </div>
+    <div class="quiz-list">
+      <div class="quiz" *ngFor="let quiz of quizzes">
+        <app-quiz-card [quiz]="quiz" (quizSelected)="onQuizSelected($event)"></app-quiz-card>
+      </div>
+    </div>
+  </ng-container>
 </div>
+<ng-template #loader>
+  <mat-spinner class="spinner"></mat-spinner>
+</ng-template>

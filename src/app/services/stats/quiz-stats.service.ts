@@ -66,18 +66,17 @@ export class QuizStatsService {
       correctQuestionsCount,
       quizzesCount,
       wrongQuestionsCount,
-      averageTimePerQuestion,
+      averageQuizTime,
     } = this.quizStatsSubject.getValue();
     const { totalTime, countQuestion, correctAnswersCount } = this.quizResult;
-    const averageTimePerLastQuiz =
-      (totalTime.minutes * 60 + totalTime.seconds) / countQuestion;
-    const averageTimePerAnswer = parseFloat(
-      ((averageTimePerQuestion + averageTimePerLastQuiz) / 2).toFixed(2)
+    const timeOfLastQuiz = totalTime.minutes * 60 + totalTime.seconds;
+    const averageTimePerQuiz = parseFloat(
+      ((averageQuizTime + timeOfLastQuiz) / 2).toFixed(2)
     );
 
     const updatedStats: QuizStats = {
       correctQuestionsCount: correctQuestionsCount + correctAnswersCount,
-      averageTimePerQuestion: averageTimePerAnswer,
+      averageQuizTime: averageTimePerQuiz,
       wrongQuestionsCount:
         wrongQuestionsCount + (countQuestion - correctAnswersCount),
       quizzesCount: quizzesCount + 1,
@@ -94,7 +93,7 @@ export class QuizStatsService {
   getInitialStats(): QuizStats {
     return {
       quizzesCount: 0,
-      averageTimePerQuestion: 0,
+      averageQuizTime: 0,
       correctQuestionsCount: 0,
       wrongQuestionsCount: 0,
     };
