@@ -1,0 +1,19 @@
+<div class="quiz" *ngIf="quiz">
+  <div class="quiz-header">
+    <h3>{{ quiz.name }}</h3>
+    <app-stop-watch #stopWatch></app-stop-watch>
+  </div>
+
+  <p>Question {{ activeQuestionIndex + 1 }} of {{ quiz.questions.length }} </p>
+  <div class="quiz-question">
+    <app-quiz-question
+      [question]="activeQuestion"
+      (answerChanged)="onAnswerChanged($event)"
+    >
+    </app-quiz-question>
+  </div>
+  <div class="quiz-actions">
+    <button mat-raised-button color="warn" (click)="cancelQuiz()">Cancel quiz</button>
+    <button mat-raised-button color="accent" [disabled]="!currentAnswer" (click)="toNextQuestion()">{{ nextBtnMessage }}</button>
+  </div>
+</div>

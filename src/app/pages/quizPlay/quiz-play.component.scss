@@ -1,0 +1,28 @@
+.quiz {
+  padding: .5rem;
+  margin-right: 20%;
+  margin-left: 20%;
+
+  &-header {
+    @extend %space-between
+  }
+
+  &-header h3{
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &-actions {
+    @extend %space-between
+  }
+
+  &-question {
+    margin-bottom: .5rem;
+  }
+}
+
+%space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
