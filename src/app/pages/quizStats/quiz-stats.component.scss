@@ -1,8 +1,11 @@
+.content-stats{
+  display: flex;
+  justify-content: center;
+}
 .stats {
   padding: .5rem;
-  margin-right: 30%;
-  margin-left: 30%;
-  margin-top: 2%;
+  margin-top:0.5rem;
+  width: 50%;
 
   &-chart-wrapper {
     height: 70%;
@@ -34,6 +37,7 @@
   }
 }
 
-@media screen and (max-width: 800px)  { .stats {width: 98%;
-  margin-right: 0;
-  margin-left: 0;} }
+@media screen and (max-width: 800px)  {
+  .stats {
+    width: 98%;
+} }

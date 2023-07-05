@@ -23,7 +23,6 @@ export class QuizStatsComponent implements OnInit {
         correctAnswers: statsData.correctQuestionsCount,
       };
     }
-
     return {
       correctAnswers: 0,
       incorrectAnswers: 0,
