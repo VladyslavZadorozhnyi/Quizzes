@@ -1,7 +1,10 @@
+.content{
+  display: flex;
+  justify-content: center;
+}
 .quiz {
   padding: .5rem;
-  margin-right: 20%;
-  margin-left: 20%;
+  width: 50%;
 
   &-header {
     @extend %space-between
@@ -26,3 +29,8 @@
   align-items: center;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 800px)  {
+  .quiz {
+    width: 100%;
+} }

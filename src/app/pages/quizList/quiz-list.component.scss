@@ -1,7 +1,10 @@
-.btn {
-  position: absolute;
-  right: 30px;
-  bottom: 30px;
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .quiz-header{
+    margin: 0;
+  }
 }
 
 .quiz-container {
@@ -10,17 +13,35 @@
   padding: .5rem;
   gap: .5rem;
 
+
   .spinner {
     margin: 0 auto;
   }
 
-  .quiz-header {
-    display: flex;
-    justify-content: center;
-  }
-
   .quiz-list {
     height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .quiz {
+      width: 50%;
+      @media screen and (max-width: 800px){
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+@media screen and (min-width: 800px) {
+  .btn {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+  }
+  .header{
+    display: flex;
+    justify-content: center;
   }
 }
 

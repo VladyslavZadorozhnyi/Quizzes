@@ -1,17 +1,20 @@
-<mat-card class="stats">
-  <mat-card-header class="stats-quiz">
-    <p>Stats</p>
-  </mat-card-header>
-  <mat-card-content class="stats-content">
-    <ng-container *ngIf="(quizStats$ | async) as stats">
-      <div class="quizzes-stats"><span>Quizzes count</span> <span>{{ stats.quizzesCount }}</span></div>
-      <div class="quizzes-stats"><span>Correct answers</span><span class="correct">{{ stats.correctQuestionsCount }}</span></div>
-      <div class="quizzes-stats"><span>Wrong answers</span><span class="wrong">{{ stats.wrongQuestionsCount }}</span></div>
-      <div class="quizzes-stats"><span>Average quiz time</span><span>{{ stats.averageQuizTime }}</span></div>
-    </ng-container>
-    <div class="stats-chart-wrapper">
-      <app-quiz-results-chart [chartData]="chartData">
-      </app-quiz-results-chart>
-    </div>
-  </mat-card-content>
-</mat-card>
+<div class="content-stats">
+  <mat-card class="stats">
+    <mat-card-header class="stats-quiz">
+      <p>Stats</p>
+    </mat-card-header>
+    <mat-card-content class="stats-content">
+      <ng-container *ngIf="(quizStats$ | async) as stats">
+        <div class="quizzes-stats"><span>Quizzes count</span> <span>{{ stats.quizzesCount }}</span></div>
+        <div class="quizzes-stats"><span>Correct answers</span><span class="correct">{{ stats.correctQuestionsCount }}</span></div>
+        <div class="quizzes-stats"><span>Wrong answers</span><span class="wrong">{{ stats.wrongQuestionsCount }}</span></div>
+        <div class="quizzes-stats"><span>Average quiz time</span><span>{{ stats.averageQuizTime }}</span></div>
+      </ng-container>
+      <div class="stats-chart-wrapper" *ngIf="chartData.incorrectAnswers || chartData.correctAnswers">
+        <app-quiz-results-chart [chartData]="chartData">
+        </app-quiz-results-chart>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
