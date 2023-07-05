@@ -26,3 +26,7 @@
   align-items: center;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 800px)  { .quiz {width: 98%;
+  margin-right: 0;
+  margin-left: 0;} }

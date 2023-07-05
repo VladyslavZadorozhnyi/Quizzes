@@ -33,3 +33,7 @@
     color: #e30404;
   }
 }
+
+@media screen and (max-width: 800px)  { .stats {width: 98%;
+  margin-right: 0;
+  margin-left: 0;} }
